@@ -58,6 +58,11 @@ public class ConnectedClient
 		return this.input.nextLine();
 	}
 	
+	public void sendByte() throws Exception
+	{
+		this.theSocket.getOutputStream().write(theByte);
+	}
+	
 	public int readByte() throws Exception
 	{
 		return this.theSocket.getInputStream().read();

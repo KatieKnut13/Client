@@ -48,6 +48,8 @@ public class ResponseThread extends Thread
 			
 			//wait for client requests for receiving a byte
 			String whichByte = this.theClient.getMessage();
+			String[] theParts = whichByte.split(":");
+			int theByte = Integer.parseInt(theParts[1]);
 			for(ConnectedClient cc : Driver.theNotBusyClients)
 			{
 				if(cc != this.theClient && cc.hasByte(Integer.parseInt(whichByte)))
